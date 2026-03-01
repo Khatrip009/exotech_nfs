@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ExoTech NFS Creator</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ExoTech NFS Creator</h1>
+    <div id="auth">
+      <div id="forms">
+        <div class="card">
+          <h2>Register</h2>
+          <input id="regEmail" placeholder="Email" />
+          <input id="regPassword" type="password" placeholder="Password" />
+          <button id="registerBtn">Register</button>
+        </div>
+        <div class="card">
+          <h2>Login</h2>
+          <input id="loginEmail" placeholder="Email" />
+          <input id="loginPassword" type="password" placeholder="Password" />
+          <button id="loginBtn">Login</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="app" style="display:none">
+      <div class="toolbar">
+        <div>Logged in as <span id="userEmail"></span></div>
+        <button id="logoutBtn">Logout</button>
+      </div>
+
+      <div class="card">
+        <h2>Create NFS Code</h2>
+        <label>Code (optional)</label>
+        <input id="codeValue" placeholder="leave blank to auto-generate" />
+        <label>Color</label>
+        <input id="color" type="color" value="#2b6cb0" />
+        <label>Frame</label>
+        <select id="frame">
+          <option value="none">None</option>
+          <option value="rounded">Rounded</option>
+          <option value="double">Double</option>
+          <option value="shadow">Shadow</option>
+        </select>
+        <label>Design</label>
+        <select id="design">
+          <option value="plain">Plain</option>
+          <option value="stripes">Stripes</option>
+          <option value="dots">Dots</option>
+        </select>
+        <div class="row">
+          <canvas id="preview" width="420" height="240"></canvas>
+          <div>
+            <button id="previewBtn">Preview</button>
+            <button id="saveBtn">Save</button>
+            <button id="downloadPreview">Download Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Your Codes</h2>
+        <div id="codesList">Loading...</div>
+      </div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
